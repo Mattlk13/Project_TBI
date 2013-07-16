@@ -1,0 +1,11 @@
+#HaptekSDK Version= 1.0  HeaderLines= 2 HapType= command FileType= text
+#Name= loadchester Icon= [ websters_icon ]
+
+
+\load	[file= data/chester/torso_maleDefChester.hap]
+\load	[file= data\standard\safe_moods\safemoodsload.hap]
+\load	[file= data\chester\standardMood1.hap]
+
+#\load	[file= data/torso_male/torso_maleDef.hap]
+#\load	[file= data\standard\safe_moods\safemoodsload.hap]
+#\load	[file= data\torso_male\standardMood.hap]

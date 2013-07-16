@@ -1,0 +1,19 @@
+#HaptekSDK Version= 1.0 HapType= command FileType= text Name= safemoodsload
+
+# Use these moods like this:
+# \switchscript [file= Hap_Happy i0= 1]
+
+\load [file= [data\chester\Hap_Angry.hap]               i0= 0]
+\load [file= [data\chester\Hap_Broken_Hearted.hap]      i0= 0]
+\load [file= [data\chester\Hap_Bully.hap]               i0= 0]
+\load [file= [data\chester\Hap_Calm.hap]                i0= 0]
+\load [file= [data\chester\Hap_Eater_Of_Bugs.hap]       i0= 0]
+\load [file= [data\chester\Hap_Happy.hap]               i0= 0]
+\load [file= [data\chester\Hap_Mellow.hap]              i0= 0]
+\load [file= [data\chester\Hap_Neutral.hap]             i0= 0]
+\load [file= [data\chester\Hap_Pondering_Mysteries.hap] i0= 0]
+\load [file= [data\chester\Hap_Psycho.hap]              i0= 0]
+\load [file= [data\chester\Hap_Sad.hap]                 i0= 0]
+\load [file= [data\chester\Hap_Shy.hap]                 i0= 0]
+\load [file= [data\chester\Hap_Shy_And_In_Love.hap]     i0= 0]
+\load [file= [data\chester\Hap_Skeptic.hap]             i0= 0]

@@ -1,0 +1,19 @@
+#HaptekSDK Version= 1.0 HapType= command FileType= text Name= safemoodsload
+
+# Use these moods like this:
+# \switchscript [file= Hap_Happy i0= 1]
+
+\load [file= [data\body_male\safe_moods\Hap_Angry.hap]               i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Broken_Hearted.hap]      i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Bully.hap]               i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Calm.hap]                i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Eater_Of_Bugs.hap]       i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Happy.hap]               i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Mellow.hap]              i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Neutral.hap]             i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Pondering_Mysteries.hap] i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Psycho.hap]              i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Sad.hap]                 i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Shy.hap]                 i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Shy_And_In_Love.hap]     i0= 0]
+\load [file= [data\body_male\safe_moods\Hap_Skeptic.hap]             i0= 0]

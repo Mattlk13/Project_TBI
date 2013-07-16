@@ -1,0 +1,31 @@
+#HaptekSDK Version= 1.0  HeaderLines= 2 HapType= looklist FileType= text
+#Name= babaslooklist Icon= [ thisi conpath ]
+
+EyeAttack= .05
+EyeDecay= .05
+EyeJitter= eyeJitter
+HeadJitter= headJitter
+EyeIgnoreConeAngle= .05
+
+#HeadAccelerationGain= 7.5
+#HeadVelocityDamping= 10
+#HeadVelocityLimit= 2.5
+
+HeadAccelerationGain= 1.5
+HeadVelocityDamping= 10
+HeadVelocityLimit= 2.5
+EyeAccelerationGain= 7.5
+EyeVelocityDamping= 10
+EyeVelocityLimit= 2.5
+
+Name=		maincamera
+ResponseTime= .3
+AttackTime= .5
+DecayTime= .5
+#Switch= emotions
+#State= smile
+MinDistance= 300.0
+Priority= 3
+
+}
+

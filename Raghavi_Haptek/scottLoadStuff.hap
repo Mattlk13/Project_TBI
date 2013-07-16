@@ -1,0 +1,13 @@
+#Haptek  Version= 1.00 HapType= script FileType= text
+
+### mood works when by herself
+\Load [file= scott.htr]
+\SetName [name= scott]
+\Translate [figure= scott x= 50 y= -10 z= 150 t=0]
+\\Scale[ x= 1 y= 1 z= 1]
+\Rotate [figure= tia y= 30 t= 0]
+\setmousemode [i0= 7 i1= 3]
+
+
+###whatever character is loaded last is the mood that will show
+

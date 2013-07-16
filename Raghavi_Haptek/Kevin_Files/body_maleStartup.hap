@@ -1,0 +1,12 @@
+#HaptekSDK Version= 1.0  HeaderLines= 2 HapType= command FileType= text
+#Name= haptek_scene Icon= [ websters_icon ]
+
+\load	   		[file= data\body_male\body_maleDef.hap]
+#\load			[file= data\body_male\safe_moods\safemoodsload.hap]
+#\rotate    	[figure= fullBod y= 180 ]
+\load			[file= data\body_male\standardMood.hap]
+
+
+
+
+

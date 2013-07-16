@@ -1,0 +1,16 @@
+#HaptekSDK Version= 1.0  HeaderLines= 2 HapType= command FileType= text
+#Name= bizladyloader Icon= [ websters_icon ]
+
+
+
+\load	[file= data\chester\torso_maleDefChester.hap]
+#\load	[file= data\chester\safemoodsload.hap]
+\load	[file= data\chester\standardMoodChester.hap]
+
+
+# linda_style
+#\load [file= data\chester\hair6_blondeFig.hap]
+
+
+# Attachment status
+#\attachefigure [figure=hair6_blonde   i0= 1 i2= 0  attached: name= torso_male]
