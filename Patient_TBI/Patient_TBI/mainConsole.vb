@@ -39,11 +39,20 @@ Public Class mainConsole
         'recog.LoadGrammar(gram)
         recog.LoadGrammar(New DictationGrammar())
 
+        ' Load Questions from the Patient_TBI dataset
+        Dim rowCount1 As Integer = fillQuestionDataGrid(Me.Question_TBLTableAdapter1, Me.Patient_TBIDataSet1)
+        Dim rowCount2 As Integer = fillFollowUpDataFrid(Me.FollowUp_TBLTableAdapter1, Me.Patient_TBIDataSet1)
+
+        MsgBox(rowCount1)
+
         ' Make a call to load background image for haptek player
         loadBkgrnd(AxActiveHaptekX1)
 
         ' Make a call to load the patients on load
         agentLoad(AxActiveHaptekX1, patientChoice.passButtonValue)
+
+        ' Translate agent within the screen
+        translateAgent(AxActiveHaptekX1, 0, 20, 70)
 
         ' Introduce the agent
         agentTalk(AxActiveHaptekX1, "Hello ! My name is Kevin and I am your patient today.")
@@ -103,10 +112,10 @@ Public Class mainConsole
         Dim randomVal As Integer = CInt(Int(moods.Length() * Rnd()))
 
         'Generate a random mood every few seconds
-        Dim agentMood As String = randomAgentMood(AxActiveHaptekX1, randomVal)
+        'Dim agentMood As String = randomAgentMood(AxActiveHaptekX1, randomVal)
 
         'Generate a random gesture based on the mood
-        randomAgentGestures(AxActiveHaptekX1, agentMood)
+        'randomAgentGestures(AxActiveHaptekX1, agentMood)
 
     End Sub
 
@@ -180,11 +189,28 @@ Public Class mainConsole
     Public Sub informationRetrieval()
 
         'Make a call to the SQL Patient_TBI database to retrieve answer based on user question
-        Me.QuestionRepoTableAdapter1.retrieveAns(Me.Patient_TBIDataSet.QuestionRepo, speechResult)
+        'Me.QuestionRepoTableAdapter1.retrieveAns(Me.Patient_TBIDataSet.QuestionRepo, speechResult)
         agentTalk(AxActiveHaptekX1, AnswerRepoTextBox.Text)
         responseTextBox.Text = AnswerRepoTextBox.Text
 
         responseTextBox.Text = "Patient Response"
     End Sub
 
+    Private Sub FillToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Try
+            Me.Question_TBLTableAdapter1.Fill(Me.Patient_TBIDataSet1.Question_TBL)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub FillToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Try
+            Me.Question_TBLTableAdapter1.Fill(Me.Patient_TBIDataSet1.Question_TBL)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
 End Class

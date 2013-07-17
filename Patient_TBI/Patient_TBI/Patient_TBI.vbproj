@@ -113,6 +113,11 @@
     <Compile Include="Patient_TBIDataSet.vb">
       <DependentUpon>Patient_TBIDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Patient_TBIDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Patient_TBIDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sample.Designer.vb">
       <DependentUpon>sample.vb</DependentUpon>
     </Compile>
@@ -126,6 +131,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="speechInteraction.vb" />
+    <Compile Include="sqlQuery.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="mainConsole.resx">
@@ -168,6 +174,17 @@
     </None>
     <None Include="Patient_TBIDataSet.xss">
       <DependentUpon>Patient_TBIDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Patient_TBIDataSet1.xsc">
+      <DependentUpon>Patient_TBIDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Patient_TBIDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Patient_TBIDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Patient_TBIDataSet1.xss">
+      <DependentUpon>Patient_TBIDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

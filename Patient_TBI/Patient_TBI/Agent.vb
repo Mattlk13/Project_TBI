@@ -60,6 +60,12 @@ Module Agent
         haptek.HyperText = "\LoadBackGrnd [file= [C:\Documents and Settings\rsakpal.UNCCHARLOTTE-NT\Desktop\Project_TBI\Images\Doctors_Office_4.jpg]]"
     End Sub
 
+    ' Date: 07/17/2013
+    ' Function: To translate the agent within the screen
+    Public Sub translateAgent(ByVal haptek As AxACTIVEHAPTEKXLib.AxActiveHaptekX, ByVal x As Double, ByVal y As Double, ByVal z As Double)
+        haptek.HyperText = "\translate [x=" & x & " y=" & y & " z=" & z & "]"
+    End Sub
+
     'Date: 06/13/2013
     'Function: Agent query to start text-to-speech
     Public Sub agentTalk(ByVal haptexX As AxACTIVEHAPTEKXLib.AxActiveHaptekX, ByVal msgString As String)

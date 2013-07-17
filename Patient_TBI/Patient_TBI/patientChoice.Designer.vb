@@ -24,21 +24,17 @@ Partial Class patientChoice
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(patientChoice))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.patient2Button = New System.Windows.Forms.Button()
         Me.patient1Button = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gray
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.patient2Button)
@@ -48,16 +44,6 @@ Partial Class patientChoice
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(440, 358)
         Me.Panel1.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(29, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = ">"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -110,15 +96,6 @@ Partial Class patientChoice
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Choose a patient to interact with."
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(388, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(33, 22)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "S"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'patientChoice
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -127,7 +104,7 @@ Partial Class patientChoice
         Me.ClientSize = New System.Drawing.Size(463, 381)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "patientChoice"
-        Me.Text = "Form2"
+        Me.Text = "Virtual Standardized Patient (VSP)"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -139,6 +116,4 @@ Partial Class patientChoice
     Friend WithEvents patient2Button As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
