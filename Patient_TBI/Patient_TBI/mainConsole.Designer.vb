@@ -53,6 +53,7 @@ Partial Class mainConsole
         Me.QuestionKeywordsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmotionDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FacialExpressionDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dataFile_Button = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.AxActiveHaptekX1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,6 +277,15 @@ Partial Class mainConsole
         Me.FacialExpressionDataGridViewTextBoxColumn1.HeaderText = "Facial_Expression"
         Me.FacialExpressionDataGridViewTextBoxColumn1.Name = "FacialExpressionDataGridViewTextBoxColumn1"
         '
+        'dataFile_Button
+        '
+        Me.dataFile_Button.Location = New System.Drawing.Point(726, 551)
+        Me.dataFile_Button.Name = "dataFile_Button"
+        Me.dataFile_Button.Size = New System.Drawing.Size(130, 33)
+        Me.dataFile_Button.TabIndex = 6
+        Me.dataFile_Button.Text = "Create Data File"
+        Me.dataFile_Button.UseVisualStyleBackColor = True
+        '
         'mainConsole
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,6 +293,7 @@ Partial Class mainConsole
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1197, 858)
         Me.ControlBox = False
+        Me.Controls.Add(Me.dataFile_Button)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
@@ -328,5 +339,6 @@ Partial Class mainConsole
     Friend WithEvents QuestionKeywordsDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EmotionDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FacialExpressionDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dataFile_Button As System.Windows.Forms.Button
 
 End Class

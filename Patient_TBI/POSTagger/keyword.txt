@@ -1,0 +1,30 @@
+Good Morning.
+Good,Morning,
+
+Do you have any questions about the type of event that is the focus of this interview ?
+Do,questions,type,event,focus,interview,
+
+Did you serve in army, navy or airforce ?
+Did,army,airforce,
+
+When and where did this worst or powerful event happen ?
+When,where,worst,event,happen,
+
+Can you walk me through this event step by step, minute by minute ?
+Can,event,step,step,minute,minute,
+
+Can you specify if the injury was due to bullet, vehicular fall or blast related ?
+Can,injury,fall,
+
+Did you lose conciousness immediately after any of these experiences ?
+Did,conciousness,experiences,
+
+Can you recall what went on at that time ?
+Can,went,time,
+
+Do you recall which of these categories happened to you : one may feel like smashing into a wall, two once could be "peppered" with particles of sand, third one could be thrown to the ground or against some stationary object like a wall or vehicle ?
+Do,categories,smashing,particles,sand,ground,object,wall,vehicle,
+
+Did you experience any of the following injuries as a result of the blast : burns, broken bones, amputation, breathing toxic fumes or crush injuries from structures falling onto you ?
+Did,experience,injuries,result,burns,bones,amputation,fumes,injuries,structures,
+

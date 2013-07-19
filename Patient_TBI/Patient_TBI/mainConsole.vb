@@ -4,6 +4,7 @@
 
 Imports System.Timers
 Imports System.Speech.Recognition
+Imports System.IO
 Imports Patient_TBI.patientChoice
 
 Public Class mainConsole
@@ -11,7 +12,6 @@ Public Class mainConsole
     Private Shared WithEvents myTimer As New System.Timers.Timer
     Private Shared exitFlag As Boolean = False
     Private Shared timerCounter As Integer = 1
-
 
     ' Recogniser & Grammer
     Dim recog As New SpeechRecognizer
@@ -23,6 +23,9 @@ Public Class mainConsole
 
     ' Variable to store speech input to send to database
     Dim speechResult As String
+
+    ' Variable to Measure row count for Question DataGrid
+    Dim rowCountQuestion As Integer
 
     ' Date: 06/14/2013 
     ' Function: To load all components on form load
@@ -40,10 +43,8 @@ Public Class mainConsole
         recog.LoadGrammar(New DictationGrammar())
 
         ' Load Questions from the Patient_TBI dataset
-        Dim rowCount1 As Integer = fillQuestionDataGrid(Me.Question_TBLTableAdapter1, Me.Patient_TBIDataSet1)
-        Dim rowCount2 As Integer = fillFollowUpDataFrid(Me.FollowUp_TBLTableAdapter1, Me.Patient_TBIDataSet1)
-
-        MsgBox(rowCount1)
+        rowCountQuestion = fillQuestionDataGrid(Me.Question_TBLTableAdapter1, Me.Patient_TBIDataSet1)
+        Dim rowCountFollowUp As Integer = fillFollowUpDataFrid(Me.FollowUp_TBLTableAdapter1, Me.Patient_TBIDataSet1)
 
         ' Make a call to load background image for haptek player
         loadBkgrnd(AxActiveHaptekX1)
@@ -196,21 +197,30 @@ Public Class mainConsole
         responseTextBox.Text = "Patient Response"
     End Sub
 
-    Private Sub FillToolStripButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Try
-            Me.Question_TBLTableAdapter1.Fill(Me.Patient_TBIDataSet1.Question_TBL)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+    ' Date: 07/18/2013
+    ' Function: Create a data file populated with questions
+    Private Sub dataFile_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dataFile_Button.Click
 
+        Dim filePath = "C:\Documents and Settings\rsakpal.UNCCHARLOTTE-NT\Desktop\Project_TBI\Patient_TBI\POSTagger\question.txt"
+        
+        ' Check to see if the file exists
+        If Not File.Exists(filePath) Then
+            ' Create a file to write to
+            File.CreateText(filePath)
+        Else
+            File.WriteAllText(filePath, "")
+        End If
+
+
+        ' Run through the DataGrid and write Questions to file
+        For counter As Integer = 0 To (rowCountQuestion - 1)
+            File.AppendAllText(filePath, (DataGridView1.Item(1, counter).Value.ToString()) & vbNewLine)
+        Next
+
+        Shell("C:\python27\python ""C:\Documents and Settings\rsakpal.UNCCHARLOTTE-NT\Desktop\Project_TBI\Patient_TBI\POSTagger\POSTagger.py"" ", vbHide)
+
+        'System.Diagnostics.Process.Start("C:\Documents and Settings\rsakpal.UNCCHARLOTTE-NT\Desktop\Project_TBI\Patient_TBI\POSTagger\POSTagger.py")
+        MsgBox("Done")
     End Sub
 
-    Private Sub FillToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Try
-            Me.Question_TBLTableAdapter1.Fill(Me.Patient_TBIDataSet1.Question_TBL)
-        Catch ex As System.Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
-
-    End Sub
 End Class
