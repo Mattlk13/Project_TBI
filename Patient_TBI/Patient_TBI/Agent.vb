@@ -69,6 +69,7 @@ Module Agent
     'Date: 06/13/2013
     'Function: Agent query to start text-to-speech
     Public Sub agentTalk(ByVal haptexX As AxACTIVEHAPTEKXLib.AxActiveHaptekX, ByVal msgString As String)
+        haptexX.HyperText = "\sapittsload[i0= 3]"
         haptexX.HyperText = "\q2[s0=[" & msgString & "]]"
     End Sub
 
@@ -88,27 +89,27 @@ Module Agent
 
         If moodSelected = "Hap_Angry.hap" Or moodSelected = "Hap_Bully.hap" Then
             'Angry, Bully
-            MsgBox(moodSelected)
+            'MsgBox(moodSelected)
             Dim randomGest As Integer = CInt(Int(aggression.Length() * Rnd()))
             haptexX.HyperText = "\setswitch [switch=" & aggression(randomGest) & " state=" & aggressionState(randomGest) & "]"
         ElseIf moodSelected = "Hap_Broken_Hearted.hap" Or moodSelected = "Hap_Sad.hap" Then
             'Sad, Broken Hearted
-            MsgBox(moodSelected)
+            'MsgBox(moodSelected)
             Dim randomGest As Integer = CInt(Int(sadness.Length() * Rnd()))
             haptexX.HyperText = "\setswitch [switch=" & sadness(randomGest) & " state=" & sadnessState(randomGest) & "]"
         ElseIf moodSelected = "Hap_Shy.hap" Then
             'Shy
-            MsgBox(moodSelected)
+            'MsgBox(moodSelected)
             Dim randomGest As Integer = CInt(Int(shy.Length() * Rnd()))
             haptexX.HyperText = "\setswitch [switch=" & shy(randomGest) & " state=" & shyState(randomGest) & "]"
         ElseIf moodSelected = "Hap_Calm.hap" Or moodSelected = "Hap_Mellow.hap" Or moodSelected = "Hap_Neutral.hap" Then
             'Calm, Mellow, Neutral
-            MsgBox(moodSelected)
+            'MsgBox(moodSelected)
             Dim randomGest As Integer = CInt(Int(neutral.Length() * Rnd()))
             haptexX.HyperText = "\setswitch [switch=" & neutral(randomGest) & " state=" & neutralState(randomGest) & "]"
         ElseIf moodSelected = "Hap_Pondering_Mysteries.hap" Or moodSelected = "Hap_Skeptic.hap" Then
             'Skeptic, Pondering Mysteries
-            MsgBox(moodSelected)
+            'MsgBox(moodSelected)
             Dim randomGest As Integer = CInt(Int(skeptic.Length() * Rnd()))
             haptexX.HyperText = "\setswitch [switch=" & skeptic(randomGest) & " state=" & skepticState(randomGest) & "]"
         End If
@@ -138,5 +139,6 @@ Module Agent
         Dim randomLookingGest As Integer = CInt(Int(lookSwitches.Length() * Rnd()))
         haptexX.HyperText = "\setswitch [switch=" & lookSwitches(randomLookingGest) & " state=" & lookSwitchesState(randomLookingGest) & "]"
     End Sub
+
 
 End Module

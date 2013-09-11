@@ -29,7 +29,7 @@ Partial Class speechExample
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.QuestionRepoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Patient_TBIDataSet = New Patient_TBI.Patient_TBIDataSet()
-        Me.QuestionRepoTableAdapter = New Patient_TBI.Patient_TBIDataSetTableAdapters.QuestionRepoTableAdapter()
+        'Me.QuestionRepoTableAdapter = New Patient_TBI.Patient_TBIDataSetTableAdapters.QuestionRepoTableAdapter()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -84,7 +84,7 @@ Partial Class speechExample
         '
         'QuestionRepoTableAdapter
         '
-        Me.QuestionRepoTableAdapter.ClearBeforeFill = True
+        'Me.QuestionRepoTableAdapter.ClearBeforeFill = True
         '
         'Label2
         '
@@ -134,7 +134,7 @@ Partial Class speechExample
     End Sub
     Friend WithEvents Patient_TBIDataSet As Patient_TBI.Patient_TBIDataSet
     Friend WithEvents QuestionRepoBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents QuestionRepoTableAdapter As Patient_TBI.Patient_TBIDataSetTableAdapters.QuestionRepoTableAdapter
+    'Friend WithEvents QuestionRepoTableAdapter As Patient_TBI.Patient_TBIDataSetTableAdapters.QuestionRepoTableAdapter
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button

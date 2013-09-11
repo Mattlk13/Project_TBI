@@ -14,8 +14,8 @@ Public Class speechExample
             MsgBox("Q_ID field is Empty", vbOK)
         Else
             Dim questionNumber As Integer = TextBox1.Text
-            Me.QuestionRepoTableAdapter.FillBy(Me.Patient_TBIDataSet.QuestionRepo, questionNumber)
-            Me.QuestionRepoTableAdapter.FillBy1(Me.Patient_TBIDataSet.QuestionRepo, questionNumber)
+            'Me.QuestionRepoTableAdapter.FillBy(Me.Patient_TBIDataSet.QuestionRepo, questionNumber)
+            'Me.QuestionRepoTableAdapter.FillBy1(Me.Patient_TBIDataSet.QuestionRepo, questionNumber)
         End If
     End Sub
 
