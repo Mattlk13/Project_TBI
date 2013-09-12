@@ -288,6 +288,15 @@ Public Class mainConsole
             MsgBox("Question not found by direct matching.")
             ' METHOD 2: N-Gram matching
             Dim quesNumNgram = n_gramMatching.main_nGrams(ques)
+            
+            ' Display answer from the n-gram method 
+            If quesNumNgram = -1 Then
+                MsgBox("No solution found by N-Gram Method")
+            Else
+                displayAnswer(quesNumNgram)
+            End If
+            
+            '----------------------------------------------------------
             ' METHOD 3: POS-Tagging Method
             MsgBox("Lets find the match by POS tagging method")
             Dim taggedDict = POSTagger.main_POS(ques)
@@ -295,20 +304,27 @@ Public Class mainConsole
             Dim taggedSent As String = POSTagger.regexKeyword(taggedDict)
             ' Display the question on the screen
             Dim quesNumPOS = POSTagMatching(taggedSent)
+            
+            ' Display the result from POS-tagging method
+            If quesNumPOS = -1 Then
+                MsgBox("No solution found by POS-Tagging method")
+            Else
+                displayAnswer(quesNumPOS)
+            End If
 
             '--------------------------------------------------
             ' If Method 2 soln found and Method 3 soln not found
-            If Not quesNumNgram = -1 And quesNumPOS = -1 Then
+            'If Not quesNumNgram = -1 And quesNumPOS = -1 Then
                 ' Display the result on the screen
-                retrieveAns(quesNumNgram)
-            ElseIf quesNumNgram = -1 And Not quesNumPOS = -1 Then ' If Method 2 soln not found and Method 3 soln found
+                'retrieveAns(quesNumNgram)
+            'ElseIf quesNumNgram = -1 And Not quesNumPOS = -1 Then ' If Method 2 soln not found and Method 3 soln found
                 ' Display the result on the screen
-                retrieveAns(quesNumPOS)
-            ElseIf Not quesNumNgram = -1 And Not quesNumPOS = -1 Then ' IF soln found for both method
-                compareAns(quesNumNgram, quesNumPOS)
-            Else ' If -1 returned
-                MsgBox("Question not found by n-gram tokenizing method and POS-tagging Method")
-            End If
+                'retrieveAns(quesNumPOS)
+            'ElseIf Not quesNumNgram = -1 And Not quesNumPOS = -1 Then ' IF soln found for both method
+                'compareAns(quesNumNgram, quesNumPOS)
+            'Else ' If -1 returned
+                'MsgBox("Question not found by n-gram tokenizing method and POS-tagging Method")
+            'End If
 
         Else ' Display the answer found by the direct matching method
             MsgBox("Question Found: " & quesNo)
@@ -432,5 +448,23 @@ Public Class mainConsole
         End If
     End Sub
 
+    ' Display the resulting answer or the multiple questions on the screen
+    Private Sub displayAnswer(ByVal quesNo As String)
+        MsgBox("Questions No: " & quesNo)
+
+        ' Split the string into tokens
+        Dim quesNoArr() As String = Split(quesNo, ",")
+
+        ' Check if qNo array has more than one question number
+        If quesNoArr.Length() > 1 Then
+            ' Print each question number in the textbox for user to choose from
+            For index As Integer = 0 To quesNoArr.Length() - 1
+                responseTextBox.Text = String.Concat(answerTextBox.Text, Question_TBLTableAdapter1.SelectQuestion(CInt(quesNoArr(index))), vbNewLine)
+            Next
+            MsgBox("Select question from one of the list.")
+        Else
+            responseTextBox.Text = Question_TBLTableAdapter1.SelectAnswer(CInt(quesNoArr(0)))
+        End If
+    End Sub
 
 End Class
